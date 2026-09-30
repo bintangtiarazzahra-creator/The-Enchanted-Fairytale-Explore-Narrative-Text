@@ -1,0 +1,1348 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Enchanted Fairytale: Explore Narrative Text</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        magic: {
+                            50: '#fbf5ff',
+                            100: '#f4e8ff',
+                            200: '#e9d2fe',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            900: '#3b0764',
+                        },
+                        fairytale: {
+                            gold: '#fbbf24',
+                            goldDark: '#d97706',
+                            emerald: '#059669',
+                            parchment: '#fef3c7',
+                            darkBg: '#0f0921'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(0.95)' },
+                            '50%': { opacity: '1', transform: 'scale(1.1)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(168, 85, 247, 0.4)' },
+                            '50%': { boxShadow: '0 0 30px rgba(251, 191, 36, 0.8)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f0921;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(147, 51, 234, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 9, 33, 1) 0%, #050212 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #f3e8ff;
+        }
+
+        .cinzel-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        .parchment-card {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(217, 119, 6, 0.15);
+            color: #1e1b4b;
+        }
+
+        .magic-glass {
+            background: rgba(30, 20, 60, 0.80);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-magic {
+            background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+        .btn-magic:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.7);
+            background: linear-gradient(135deg, #b666ff 0%, #8b28e0 100%);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            color: #1e1b4b;
+            font-weight: 800;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.7);
+            background: linear-gradient(135deg, #fcd34d 0%, #b45309 100%);
+        }
+
+        .badge-locked {
+            filter: grayscale(1) opacity(0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0921;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7e22ce;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printableCertificate, #printableCertificate * {
+                visibility: visible;
+            }
+            #printableCertificate {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between min-h-screen p-3 sm:p-6 relative overflow-x-hidden">
+
+    <!-- TOP NAVBAR -->
+    <header class="max-w-5xl mx-auto w-full mb-4 z-20">
+        <div class="magic-glass rounded-2xl px-4 py-3 flex items-center justify-between shadow-xl">
+            <!-- Brand & Title -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 to-purple-600 flex items-center justify-center text-white text-xl shadow-lg animate-float">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                    <h1 class="cinzel-font font-bold text-base sm:text-lg text-amber-300 leading-tight">The Enchanted Fairytale</h1>
+                    <p class="text-[11px] text-purple-200 font-medium hidden sm:block">Explore Narrative Text • SMA Class 11</p>
+                </div>
+            </div>
+
+            <!-- Stats Bar (Hearts, Score, Audio & Badges) -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Hearts / Lives -->
+                <div class="flex items-center space-x-1 bg-rose-950/60 border border-rose-500/40 px-2.5 py-1 rounded-xl" title="Lives Remaining">
+                    <i class="fa-solid fa-heart text-rose-500 text-sm animate-pulse"></i>
+                    <span id="heartsDisplay" class="font-extrabold text-xs text-rose-200">3</span>
+                </div>
+
+                <!-- Score -->
+                <div class="flex items-center space-x-1.5 bg-amber-950/60 border border-amber-500/40 px-3 py-1 rounded-xl" title="Total Score">
+                    <i class="fa-solid fa-coins text-amber-400 text-sm"></i>
+                    <span id="scoreDisplay" class="font-extrabold text-xs sm:text-sm text-amber-300">0 PTS</span>
+                </div>
+
+                <!-- Material Codex Button -->
+                <button onclick="openCodexModal()" class="px-3 py-1.5 rounded-xl bg-purple-900/80 border border-purple-500/40 text-xs font-bold text-amber-300 hover:bg-purple-800 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-book-bookmark text-amber-400"></i>
+                    <span class="hidden md:inline">Materi Codex</span>
+                </button>
+
+                <!-- Badges Toggle Drawer Button -->
+                <button onclick="toggleBadgesModal()" class="w-9 h-9 rounded-xl bg-purple-900/60 border border-purple-500/40 text-purple-200 hover:text-white hover:bg-purple-800 transition flex items-center justify-center relative" title="View Achievements">
+                    <i class="fa-solid fa-trophy text-amber-400"></i>
+                    <span id="badgeNotificationDot" class="hidden absolute -top-1 -right-1 w-3 h-3 bg-rose-500 rounded-full animate-ping"></span>
+                </button>
+
+                <!-- Sound Toggle -->
+                <button id="soundBtn" onclick="toggleSound()" class="w-9 h-9 rounded-xl bg-purple-900/60 border border-purple-500/40 text-purple-200 hover:text-white hover:bg-purple-800 transition flex items-center justify-center" title="Toggle Sound">
+                    <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Global Progress Bar -->
+        <div id="progressContainer" class="hidden w-full bg-purple-950/80 border border-purple-800/50 rounded-full h-2.5 mt-2 overflow-hidden p-0.5 shadow-inner">
+            <div id="progressBar" class="bg-gradient-to-r from-amber-400 via-purple-500 to-emerald-400 h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-5xl mx-auto w-full flex-grow flex items-center justify-center z-10 my-2">
+
+        <!-- ================= VIEW 1: WELCOME SCREEN ================= -->
+        <section id="welcomeView" class="w-full magic-glass rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden shadow-2xl border border-purple-500/40">
+            <!-- Background Glow Elements -->
+            <div class="absolute -top-16 -right-16 w-56 h-56 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-16 -left-16 w-56 h-56 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold px-4 py-1.5 rounded-full animate-float">
+                    <i class="fa-solid fa-crown text-amber-400"></i>
+                    <span>Interactive English Fairytale Simulation • SMA Class 11</span>
+                </div>
+
+                <h2 class="cinzel-font text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-purple-200 to-amber-400 tracking-wide leading-tight">
+                    The Enchanted Fairytale:<br><span class="text-amber-300">Explore Narrative Text</span>
+                </h2>
+                <p class="text-xs sm:text-base text-purple-200 leading-relaxed font-normal max-w-2xl mx-auto">
+                    Selamat datang di Kerajaan Moonlight! Sang Raja membutuhkan bantuanmu untuk menemukan <span class="text-amber-300 font-semibold">The Lost Crystal</span> yang hilang. Berpetualanglah sambil menguasai seluruh materi <span class="text-purple-300 font-bold">Narrative Text (Fairytale)</span>!
+                </p>
+
+                <!-- Learning Objectives Preview Box -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left pt-2">
+                    <div class="bg-purple-950/60 p-3 rounded-2xl border border-purple-800/60 flex flex-col justify-between hover:border-amber-400/60 transition">
+                        <i class="fa-solid fa-book-open text-amber-400 text-xl mb-2"></i>
+                        <span class="text-xs font-bold text-amber-200">1. Definition & Purpose</span>
+                        <span class="text-[10px] text-purple-300">To entertain & give moral lesson</span>
+                    </div>
+                    <div class="bg-purple-950/60 p-3 rounded-2xl border border-purple-800/60 flex flex-col justify-between hover:border-emerald-400/60 transition">
+                        <i class="fa-solid fa-layer-group text-emerald-400 text-xl mb-2"></i>
+                        <span class="text-xs font-bold text-emerald-200">2. Generic Structure</span>
+                        <span class="text-[10px] text-purple-300">Orientation s/d Coda</span>
+                    </div>
+                    <div class="bg-purple-950/60 p-3 rounded-2xl border border-purple-800/60 flex flex-col justify-between hover:border-indigo-400/60 transition">
+                        <i class="fa-solid fa-wand-magic-sparkles text-indigo-400 text-xl mb-2"></i>
+                        <span class="text-xs font-bold text-indigo-200">3. Fairytale Traits</span>
+                        <span class="text-[10px] text-purple-300">Magic items, creatures & animals</span>
+                    </div>
+                    <div class="bg-purple-950/60 p-3 rounded-2xl border border-purple-800/60 flex flex-col justify-between hover:border-pink-400/60 transition">
+                        <i class="fa-solid fa-spell-check text-pink-400 text-xl mb-2"></i>
+                        <span class="text-xs font-bold text-pink-200">4. Language Features</span>
+                        <span class="text-[10px] text-purple-300">Simple Past, Verbs & Sequence</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openCodexModal()" class="px-6 py-3.5 bg-purple-900/80 hover:bg-purple-800 border border-purple-500/50 text-purple-100 font-extrabold text-sm rounded-2xl transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-book-bookmark text-amber-400"></i>
+                        <span>Pelajari Material Codex</span>
+                    </button>
+                    <button onclick="startStoryGame()" class="btn-gold px-8 py-3.5 text-base rounded-2xl flex items-center justify-center space-x-3 shadow-xl">
+                        <span>Mulai Petualangan Fairytale</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW 2: CHAPTER STORY & GAMEPLAY ================= -->
+        <section id="storyView" class="hidden w-full magic-glass rounded-3xl p-5 sm:p-8 shadow-2xl border border-purple-500/40">
+            <!-- Chapter Badge Header -->
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-purple-800/60">
+                <div class="flex flex-wrap items-center gap-2">
+                    <span id="chapterBadge" class="bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold px-3 py-1 rounded-full">
+                        Chapter 1: The Magical Kingdom
+                    </span>
+                    <span id="structureTag" class="bg-purple-900/80 border border-purple-500/40 text-purple-200 text-xs font-bold px-3 py-1 rounded-full">
+                        Structure: Orientation
+                    </span>
+                </div>
+                <div class="text-xs text-purple-300 font-mono">
+                    <i class="fa-solid fa-scroll text-amber-400 mr-1"></i> <span id="chapterStepText">Step 1 of 2</span>
+                </div>
+            </div>
+
+            <!-- Chapter Story Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left Column: Story Parchment Card -->
+                <div class="lg:col-span-5 flex flex-col">
+                    <div class="parchment-card rounded-2xl p-5 flex-grow flex flex-col justify-between relative overflow-hidden">
+                        <div>
+                            <!-- Parchment Header -->
+                            <div class="flex items-center justify-between pb-3 mb-3 border-b border-amber-700/20">
+                                <span class="cinzel-font font-black text-amber-900 text-sm tracking-wider uppercase" id="storySceneTitle">The Kingdom Scene</span>
+                                <i class="fa-solid fa-feather-pointed text-amber-700 text-lg"></i>
+                            </div>
+
+                            <!-- Fairytale Illustration Placeholder / Graphic -->
+                            <div id="sceneGraphicBox" class="w-full h-32 rounded-xl mb-4 bg-purple-950 text-purple-200 flex items-center justify-center text-4xl shadow-inner relative overflow-hidden">
+                                <i id="sceneIcon" class="fa-solid fa-castle text-amber-400 animate-float"></i>
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-950/80 to-transparent"></div>
+                            </div>
+
+                            <!-- Narrative Text Content -->
+                            <div id="storyParagraph" class="text-xs sm:text-sm text-amber-950 font-medium leading-relaxed space-y-2">
+                                Loading story...
+                            </div>
+                        </div>
+
+                        <!-- Theory Tip Callout Box -->
+                        <div id="theoryTipBox" class="mt-4 pt-3 border-t border-amber-700/20 bg-amber-100/80 p-3 rounded-xl text-xs text-amber-900">
+                            <span class="font-bold flex items-center gap-1.5 text-amber-950 mb-1">
+                                <i class="fa-solid fa-graduation-cap text-purple-700"></i> Narrative Tip:
+                            </span>
+                            <p id="theoryTipText">Orientation memperkenalkan tokoh (who), tempat (where), dan waktu (when).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Tasks / Questions -->
+                <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+                    <div>
+                        <!-- Interactive Task Prompt Header -->
+                        <div class="bg-purple-950/80 border border-purple-700/60 rounded-2xl p-4 mb-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 id="taskTitle" class="cinzel-font font-bold text-amber-300 text-sm sm:text-base">
+                                    Task Title
+                                </h3>
+                                <span id="taskCategoryBadge" class="text-[10px] bg-purple-900 border border-purple-500/40 text-purple-200 font-bold px-2 py-0.5 rounded">
+                                    Task
+                                </span>
+                            </div>
+                            <p id="taskInstruction" class="text-xs text-purple-200 leading-relaxed">
+                                Petunjuk pengerjaan soal...
+                            </p>
+                        </div>
+
+                        <!-- Question Options Container -->
+                        <div id="optionsContainer" class="space-y-3">
+                            <!-- Dynamic options inserted via Javascript -->
+                        </div>
+                    </div>
+
+                    <!-- Action Control Buttons -->
+                    <div id="actionBtnContainer" class="pt-2 flex justify-end">
+                        <button id="submitAnswerBtn" onclick="submitChapterAnswer()" disabled class="w-full sm:w-auto px-6 py-3 bg-purple-900/50 text-purple-400 font-bold text-sm rounded-xl transition cursor-not-allowed flex items-center justify-center space-x-2">
+                            <span>Kirim Jawaban</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW 3: INTERACTIVE EXPLANATION MODAL / FEEDBACK ================= -->
+        <section id="feedbackView" class="hidden w-full magic-glass rounded-3xl p-6 sm:p-8 shadow-2xl border border-purple-500/40 text-left">
+            <!-- Header Feedback -->
+            <div id="feedbackHeaderBox" class="p-4 rounded-2xl mb-4 flex items-center space-x-4">
+                <div id="feedbackIconCircle" class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg">
+                    <i id="feedbackIcon" class="fa-solid fa-check"></i>
+                </div>
+                <div>
+                    <h3 id="feedbackTitle" class="cinzel-font font-bold text-lg sm:text-xl">Jawaban Tepat! 🎉</h3>
+                    <p id="feedbackSubtitle" class="text-xs font-medium opacity-90">+10 Poin Didapatkan</p>
+                </div>
+            </div>
+
+            <!-- Material Explanation Card -->
+            <div class="bg-purple-950/80 border border-purple-700/60 p-5 rounded-2xl space-y-3 mb-6">
+                <div class="flex items-center space-x-2 text-amber-300 font-extrabold text-xs sm:text-sm border-b border-purple-800/80 pb-2">
+                    <i class="fa-solid fa-book-open-reader text-amber-400"></i>
+                    <span>PEMBAHASAN MATERI NARRATIVE TEXT</span>
+                </div>
+                <p id="feedbackExplanationText" class="text-xs sm:text-sm text-purple-100 leading-relaxed">
+                    Penjelasan materi pembelajaran akan ditampilkan di sini.
+                </p>
+
+                <!-- Helpful Rule Card -->
+                <div id="feedbackRuleBox" class="bg-amber-500/10 border border-amber-500/30 p-3 rounded-xl text-xs text-amber-200">
+                    <span class="font-bold text-amber-300 block mb-1"><i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> Aturan Penting:</span>
+                    <span id="feedbackRuleText">Aturan tata bahasa atau struktur cerita.</span>
+                </div>
+            </div>
+
+            <div class="flex justify-end">
+                <button onclick="continueAfterFeedback()" class="btn-gold px-8 py-3.5 text-sm rounded-xl flex items-center justify-center space-x-2 shadow-lg">
+                    <span>Lanjutkan Cerita</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= VIEW 4: FINAL COMPREHENSIVE QUIZ ================= -->
+        <section id="quizView" class="hidden w-full magic-glass rounded-3xl p-6 sm:p-8 shadow-2xl border border-purple-500/40">
+            <!-- Quiz Header -->
+            <div class="flex items-center justify-between pb-4 mb-6 border-b border-purple-800/60">
+                <div>
+                    <span class="bg-purple-900 border border-purple-500/40 text-purple-200 text-xs font-bold px-3 py-1 rounded-full">
+                        Evaluasi Akhir
+                    </span>
+                    <h3 class="cinzel-font font-bold text-xl text-amber-300 mt-1">Final Fairytale Quiz</h3>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs text-purple-300">Soal Ke-</span>
+                    <div class="cinzel-font text-lg font-bold text-amber-400" id="quizNumberText">1 / 10</div>
+                </div>
+            </div>
+
+            <!-- Question Box -->
+            <div class="space-y-6">
+                <div class="bg-purple-950/80 border border-purple-700/60 p-5 rounded-2xl">
+                    <span id="quizCategoryTag" class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 border border-amber-800/60 px-2.5 py-1 rounded-md mb-2 inline-block">
+                        Narrative Text Structure
+                    </span>
+                    <p id="quizQuestionText" class="text-sm sm:text-base font-semibold text-purple-100 leading-relaxed">
+                        Loading question...
+                    </p>
+                </div>
+
+                <!-- Quiz Options -->
+                <div id="quizOptionsContainer" class="space-y-3">
+                    <!-- Options inserted via JS -->
+                </div>
+
+                <div class="flex justify-end pt-2">
+                    <button id="quizSubmitBtn" onclick="submitQuizAnswer()" disabled class="w-full sm:w-auto px-8 py-3.5 bg-purple-900/50 text-purple-400 font-extrabold text-sm rounded-xl transition cursor-not-allowed flex items-center justify-center space-x-2">
+                        <span>Kirim Jawaban Kuis</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW 5: VICTORY & CERTIFICATE SCREEN ================= -->
+        <section id="resultView" class="hidden w-full magic-glass rounded-3xl p-6 sm:p-10 text-center shadow-2xl border border-purple-500/40">
+            <div class="max-w-2xl mx-auto space-y-6">
+                <!-- Crown Badge Icon -->
+                <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-amber-400 to-amber-600 text-purple-950 text-4xl flex items-center justify-center mx-auto shadow-2xl animate-float">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+
+                <div>
+                    <h2 class="cinzel-font text-2xl sm:text-4xl font-extrabold text-amber-300">Petualangan Selesai! 🎉</h2>
+                    <p class="text-xs sm:text-sm text-purple-200 mt-1">Kamu berhasil menyelamatkan Moonlight Kingdom dan menguasai materi <span class="text-amber-300 font-bold">Narrative Text (Fairytale)</span>!</p>
+                </div>
+
+                <!-- Name Input for Certificate -->
+                <div class="bg-purple-950/80 border border-purple-700/60 p-4 rounded-2xl text-left max-w-md mx-auto">
+                    <label for="playerNameInput" class="block text-xs font-bold text-amber-300 mb-1">
+                        <i class="fa-solid fa-user-pen mr-1"></i> Nama Siswa / Pemain:
+                    </label>
+                    <input type="text" id="playerNameInput" oninput="updateCertificateName()" placeholder="Masukkan Namamu..." class="w-full px-3 py-2 bg-purple-900/90 border border-purple-500/50 rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400" value="Petualang Moonlight">
+                </div>
+
+                <!-- Score Board -->
+                <div class="bg-purple-950/90 border border-purple-700/80 p-5 rounded-2xl grid grid-cols-3 gap-2 text-center">
+                    <div>
+                        <span class="text-[10px] text-purple-300 uppercase font-bold block">Skor Akhir</span>
+                        <span id="finalScoreText" class="cinzel-font text-xl sm:text-3xl font-extrabold text-amber-400">150</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-purple-300 uppercase font-bold block">Akurasi Kuis</span>
+                        <span id="finalAccuracyText" class="cinzel-font text-xl sm:text-3xl font-extrabold text-emerald-400">100%</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-purple-300 uppercase font-bold block">Gelar Master</span>
+                        <span id="finalBadgeTitle" class="text-xs sm:text-sm font-extrabold text-purple-200 mt-1 block">Fairytale Master</span>
+                    </div>
+                </div>
+
+                <!-- Certificate Preview Box -->
+                <div id="printableCertificate" class="parchment-card p-6 sm:p-8 rounded-2xl text-center border-4 border-amber-600 shadow-xl relative overflow-hidden">
+                    <div class="border-2 border-dashed border-amber-800/40 p-4 sm:p-6 rounded-xl">
+                        <div class="text-xs font-bold uppercase tracking-widest text-amber-900">Certificate of Completion</div>
+                        <h3 class="cinzel-font text-xl sm:text-2xl font-black text-amber-950 my-2">Fairytale Story Master</h3>
+                        <p class="text-xs text-amber-900 font-medium">Diberikan kepada Petualang Berkemampuan Tinggi:</p>
+                        <p id="certPlayerName" class="cinzel-font text-lg sm:text-xl font-extrabold text-purple-950 my-2 underline decoration-amber-600">Petualang Moonlight</p>
+                        <p class="text-xs font-bold text-amber-900">Atas Keberhasilan Menguasai Material Narrative Text (Fairytale) - SMA Kelas 11</p>
+                        <div class="mt-4 pt-3 border-t border-amber-800/30 flex items-center justify-between text-[10px] text-amber-900 font-bold">
+                            <span>Moonlight Kingdom</span>
+                            <span id="certificateDate">Sept 2026</span>
+                            <span>The Enchanted Fairytale Game</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restart / Print Buttons -->
+                <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="printCertificate()" class="px-6 py-3.5 bg-purple-900 hover:bg-purple-800 border border-purple-500/50 text-purple-100 font-bold text-sm rounded-xl transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-print text-amber-400"></i>
+                        <span>Cetak Sertifikat</span>
+                    </button>
+                    <button onclick="restartGame()" class="btn-gold px-8 py-3.5 text-sm rounded-xl flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span>Mainkan Lagi</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL 1: MATERIAL CODEX (Kamus Materi Narrative Text) -->
+    <div id="codexModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="magic-glass max-w-3xl w-full max-h-[85vh] rounded-3xl p-6 overflow-y-auto border border-purple-500/50 space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-800 pb-3">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-book-bookmark text-amber-400 text-xl"></i>
+                    <h3 class="cinzel-font font-bold text-lg text-amber-300">Narrative Text Learning Codex</h3>
+                </div>
+                <button onclick="closeCodexModal()" class="w-8 h-8 rounded-full bg-purple-900 text-purple-200 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Material Content Sections -->
+            <div class="space-y-4 text-xs sm:text-sm text-purple-100">
+                <!-- Section 1 -->
+                <div class="bg-purple-950/80 p-4 rounded-2xl border border-purple-800/80">
+                    <h4 class="font-bold text-amber-300 text-sm mb-1"><i class="fa-solid fa-book-open text-amber-400 mr-1.5"></i>1. Pengertian Narrative Text</h4>
+                    <p class="leading-relaxed text-purple-200">
+                        Narrative Text adalah jenis teks yang menceritakan sebuah cerita atau rangkaian peristiwa kronologis dengan tujuan utama untuk <span class="text-amber-300 font-semibold">menghibur pembaca (to entertain)</span> serta menyampaikan pesan moral.
+                    </p>
+                    <div class="mt-2 p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-xl text-xs text-amber-200 italic font-serif">
+                        « "Once upon a time, there lived a kind princess in a magical kingdom..." »
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="bg-purple-950/80 p-4 rounded-2xl border border-purple-800/80">
+                    <h4 class="font-bold text-amber-300 text-sm mb-1"><i class="fa-solid fa-bullseye text-amber-400 mr-1.5"></i>2. Tujuan Narrative Text</h4>
+                    <ul class="space-y-1 list-disc list-inside text-purple-200">
+                        <li><strong>To entertain the readers</strong> (Menghibur para pembaca).</li>
+                        <li><strong>To tell an imaginative or fictional story</strong> (Menceritakan cerita khayalan/fiksi).</li>
+                        <li><strong>To share a moral lesson or message</strong> (Membagikan pesan moral kehidupan).</li>
+                        <li><strong>To engage the reader through an interesting storyline</strong> (Menarik pembaca melalui alur menarik).</li>
+                    </ul>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="bg-purple-950/80 p-4 rounded-2xl border border-purple-800/80">
+                    <h4 class="font-bold text-emerald-300 text-sm mb-1"><i class="fa-solid fa-cubes text-emerald-400 mr-1.5"></i>3. Generic Structure (Struktur Teks)</h4>
+                    <div class="space-y-2 mt-2">
+                        <div class="p-2.5 bg-purple-900/60 rounded-xl">
+                            <span class="font-bold text-amber-300">a. Orientation:</span> Memperkenalkan tokoh (who), tempat (where), waktu (when), dan situasi awal cerita.
+                        </div>
+                        <div class="p-2.5 bg-purple-900/60 rounded-xl">
+                            <span class="font-bold text-amber-300">b. Complication:</span> Munculnya masalah atau konflik utama yang mengganggu situasi tenang.
+                        </div>
+                        <div class="p-2.5 bg-purple-900/60 rounded-xl">
+                            <span class="font-bold text-amber-300">c. Resolution:</span> Solusi atau cara tokoh menyelesaikan masalah/konflik.
+                        </div>
+                        <div class="p-2.5 bg-purple-900/60 rounded-xl">
+                            <span class="font-bold text-amber-300">d. Re-orientation / Coda:</span> Penutup cerita dan pesan moral (opsional).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="bg-purple-950/80 p-4 rounded-2xl border border-purple-800/80">
+                    <h4 class="font-bold text-indigo-300 text-sm mb-1"><i class="fa-solid fa-wand-magic-sparkles text-indigo-400 mr-1.5"></i>4. Karakteristik Narrative Text (Fairytale)</h4>
+                    <ol class="space-y-1.5 list-decimal list-inside text-purple-200 leading-relaxed">
+                        <li>Tokoh melibatkan makhluk ajaib (witches, giants, elves, dragons, fairies) serta raja/ratu/pangeran/putri.</li>
+                        <li>Benda-benda seringkali memiliki kekuatan sihir.</li>
+                        <li>Hewan dapat berbicara seperti manusia.</li>
+                        <li>Orang baik diberi hadiah (rewarded), orang jahat dihukum (punished).</li>
+                        <li>Terdapat hal-hal imajinatif yang tak mungkin terjadi di dunia nyata.</li>
+                        <li>Latar tempat bertema dunia lain atau imajinatif.</li>
+                        <li>Alur digerakkan oleh aksi (action-driven plot).</li>
+                        <li>Masalah diselesaikan dengan akhir yang bahagia (happy endings).</li>
+                        <li>Tema berpusat pada kebaikan vs kejahatan (good versus evil).</li>
+                        <li>Menggunakan kalimat pembuka klasik seperti <em>"Once upon a time"</em> atau <em>"In a land far, far away"</em>.</li>
+                        <li>Features: <strong>Simple Past Tense</strong> (v2), action verbs, sequence words (temporal conjunctions), adverbs, noun phrases, adjective clauses, direct & indirect speech.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="pt-2 text-center">
+                <button onclick="closeCodexModal()" class="btn-gold px-6 py-2.5 text-xs rounded-xl">
+                    Pahami & Tutup Codex
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: BADGES & ACHIEVEMENTS DRAWER -->
+    <div id="badgesModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="magic-glass max-w-lg w-full rounded-3xl p-6 border border-purple-500/50 space-y-4">
+            <div class="flex items-center justify-between border-b border-purple-800 pb-3">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-trophy text-amber-400 text-xl"></i>
+                    <h3 class="cinzel-font font-bold text-lg text-amber-300">Lencana Prestasi (Badges)</h3>
+                </div>
+                <button onclick="toggleBadgesModal()" class="w-8 h-8 rounded-full bg-purple-900 text-purple-200 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Badges List -->
+            <div class="grid grid-cols-2 gap-3 text-left">
+                <!-- Badge 1 -->
+                <div id="badge1Card" class="bg-purple-950/80 p-3 rounded-2xl border border-purple-800 flex items-center space-x-3 badge-locked">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 text-xl flex items-center justify-center">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-amber-200">Orientation Expert</h5>
+                        <p class="text-[10px] text-purple-300">Selesaikan Chapter 1</p>
+                    </div>
+                </div>
+
+                <!-- Badge 2 -->
+                <div id="badge2Card" class="bg-purple-950/80 p-3 rounded-2xl border border-purple-800 flex items-center space-x-3 badge-locked">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 text-xl flex items-center justify-center">
+                        <i class="fa-solid fa-spell-check"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-indigo-200">Past Tense Wizard</h5>
+                        <p class="text-[10px] text-purple-300">Kuasai Grammar Chapter 3</p>
+                    </div>
+                </div>
+
+                <!-- Badge 3 -->
+                <div id="badge3Card" class="bg-purple-950/80 p-3 rounded-2xl border border-purple-800 flex items-center space-x-3 badge-locked">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 text-xl flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-emerald-200">Conflict Resolver</h5>
+                        <p class="text-[10px] text-purple-300">Selesaikan Chapter 4</p>
+                    </div>
+                </div>
+
+                <!-- Badge 4 -->
+                <div id="badge4Card" class="bg-purple-950/80 p-3 rounded-2xl border border-purple-800 flex items-center space-x-3 badge-locked">
+                    <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 text-xl flex items-center justify-center">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-pink-200">Fairytale Story Master</h5>
+                        <p class="text-[10px] text-purple-300">Selesaikan Game & Quiz</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-2">
+                <button onclick="toggleBadgesModal()" class="px-5 py-2 bg-purple-900 hover:bg-purple-800 text-xs font-bold text-purple-200 rounded-xl">
+                    Tutup Drawer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ================= WEB AUDIO SYNTHESIZER ================= */
+        let audioCtx = null;
+        let soundMuted = false;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playSound(type) {
+            if (soundMuted) return;
+            initAudio();
+            if (!audioCtx) return;
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+
+            if (type === 'correct') {
+                // Magical Chime
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now); // C5
+                osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.1); // E5
+                osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.2); // G5
+                osc.frequency.exponentialRampToValueAtTime(1046.50, now + 0.3); // C6
+                gain.gain.setValueAtTime(0.25, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                osc.start(now);
+                osc.stop(now + 0.5);
+            } else if (type === 'wrong') {
+                // Low error tone
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(180, now);
+                osc.frequency.exponentialRampToValueAtTime(110, now + 0.25);
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'click') {
+                // Subtle click
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(440, now);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            } else if (type === 'badge') {
+                // Achievement fan-fare
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, now);
+                osc.frequency.setValueAtTime(554.37, now + 0.1);
+                osc.frequency.setValueAtTime(659.25, now + 0.2);
+                osc.frequency.setValueAtTime(880, now + 0.3);
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.6);
+                osc.start(now);
+                osc.stop(now + 0.6);
+            }
+        }
+
+        function toggleSound() {
+            soundMuted = !soundMuted;
+            const soundIcon = document.getElementById('soundIcon');
+            soundIcon.className = soundMuted ? 'fa-solid fa-volume-xmark text-purple-400' : 'fa-solid fa-volume-high text-purple-200';
+        }
+
+        /* ================= GAME STATE & DATA ================= */
+        let score = 0;
+        let hearts = 3;
+        let currentChapterIndex = 0;
+        let currentStepIndex = 0;
+        let currentSelectedOption = null;
+        let unlockedBadges = { badge1: false, badge2: false, badge3: false, badge4: false };
+
+        // Chapter Story Database with integrated Narrative Text Learning Steps
+        const chapterData = [
+            {
+                chapterId: 1,
+                title: "Chapter 1: The Magical Kingdom",
+                structure: "Orientation",
+                icon: "fa-castle",
+                sceneTitle: "The Castle of Moonlight",
+                storyText: "Once upon a time, in a land far away, there lived a brave knight named Sir Valen and Princess Lyra in the prosperous Moonlight Kingdom. They protected the legendary glowing blue crystal that brought peace to the realm.",
+                theoryTip: "ORIENTATION introducing: Characters (Sir Valen, Princess Lyra), Setting (Moonlight Kingdom), and Time (Once upon a time).",
+                steps: [
+                    {
+                        categoryBadge: "Orientation & Characters",
+                        taskTitle: "Identifying Orientation Elements",
+                        instruction: "Siapa sajakah tokoh utama (characters) dan tempat (setting) yang diperkenalkan pada bagian Orientation di atas?",
+                        options: [
+                            { text: "A. Sir Valen & Princess Lyra in Moonlight Kingdom", correct: true },
+                            { text: "B. The Sorcerer in the Dark Forest", correct: false },
+                            { text: "C. King Arthur in Camelot", correct: false },
+                            { text: "D. The Talking Owl in the Whispering Cave", correct: false }
+                        ],
+                        explanation: "Sesuai dengan definisi Orientation, bagian ini memperkenalkan siapa tokohnya (Sir Valen & Princess Lyra) dan di mana latar tempatnya (Moonlight Kingdom).",
+                        rule: "Orientation menjawab pertanyaan: Who (tokoh), Where (tempat), dan When (waktu)."
+                    },
+                    {
+                        categoryBadge: "Purpose Activity",
+                        taskTitle: "Purpose of Narrative Text",
+                        instruction: "Berdasarkan teks fairytale di atas, apakah tujuan utama (social function) dari Narrative Text?",
+                        options: [
+                            { text: "A. To describe how to craft a crystal sword.", correct: false },
+                            { text: "B. To entertain the readers through an imaginative story.", correct: true },
+                            { text: "C. To report accurate scientific facts about crystals.", correct: false },
+                            { text: "D. To persuade citizens to pay taxes to the king.", correct: false }
+                        ],
+                        explanation: "Tujuan utama Narrative Text (Fairytale) adalah 'To entertain or amuse the readers' dengan alur cerita imajinatif.",
+                        rule: "Narrative Text bertujuan menghibur (entertain) dan membagikan nilai moral."
+                    }
+                ]
+            },
+            {
+                chapterId: 2,
+                title: "Chapter 2: The Missing Crystal",
+                structure: "Complication",
+                icon: "fa-gem",
+                sceneTitle: "The Empty Pedestal",
+                storyText: "One stormy midnight, a loud thunder struck the tower. Suddenly, the glowing blue crystal vanished from its pedestal! Dark shadows crept into the kingdom. The villagers panicked.",
+                theoryTip: "COMPLICATION adalah munculnya masalah atau konflik utama yang mengganggu ketenangan dalam cerita.",
+                steps: [
+                    {
+                        categoryBadge: "Complication Challenge",
+                        taskTitle: "Identifying the Conflict",
+                        instruction: "Masalah atau konflik utama (Complication) apakah yang terjadi pada bab ini?",
+                        options: [
+                            { text: "A. The kingdom had no food left for winter.", correct: false },
+                            { text: "B. The glowing crystal vanished suddenly, causing panic.", correct: true },
+                            { text: "C. Princess Lyra decided to quit being a royal.", correct: false },
+                            { text: "D. Sir Valen lost his sword during a tournament.", correct: false }
+                        ],
+                        explanation: "Complication terjadi saat krisis timbul—kristal ajaib lenyap dan bayangan gelap melanda kerajaan.",
+                        rule: "Complication menggerakkan alur cerita (action-driven plot) menuju pencarian pahlawan."
+                    },
+                    {
+                        categoryBadge: "Choose Your Path",
+                        taskTitle: "Heroic Action Choice",
+                        instruction: "Sebagai Sir Valen, tindakan apakah yang sebaiknya diambil untuk memulai petualangan?",
+                        options: [
+                            { text: "A. Ignore the crisis and go to sleep.", correct: false },
+                            { text: "B. Follow the dark tracks leading into the Dark Forest.", correct: true },
+                            { text: "C. Blame the innocent villagers for the lost crystal.", correct: false },
+                            { text: "D. Leave Moonlight Kingdom forever.", correct: false }
+                        ],
+                        explanation: "Pahlawan cerita fairytale mengambil tindakan aktif untuk menghadapi Tantangan dan memecahkan konflik.",
+                        rule: "Tindakan pahlawan menjadi pendorong alur cerita (action plot)."
+                    }
+                ]
+            },
+            {
+                chapterId: 3,
+                title: "Chapter 3: The Dark Forest",
+                structure: "Language Features",
+                icon: "fa-tree",
+                sceneTitle: "The Whispering Woods",
+                storyText: "Sir Valen [1. enter / entered] the misty Dark Forest. Suddenly, a talking owl [2. sit / sat] on a branch and [3. speak / spoke] to him in human words, revealing the sorcerer's lair.",
+                theoryTip: "LANGUAGE FEATURES: Fairytale menggunakan Simple Past Tense (V2), action verbs, dan karakteristik seperti hewani yang berbicarat.",
+                steps: [
+                    {
+                        categoryBadge: "Grammar Challenge",
+                        taskTitle: "Simple Past Tense (V2)",
+                        instruction: "Pilihlah bentuk kata kerja Simple Past Tense (Verb 2) yang tepat untuk melengkapi angka [1], [2], dan [3]!",
+                        options: [
+                            { text: "A. enter ; sit ; speak", correct: false },
+                            { text: "B. entered ; sat ; spoke", correct: true },
+                            { text: "C. entering ; sitting ; speaking", correct: false },
+                            { text: "D. enters ; sits ; speaks", correct: false }
+                        ],
+                        explanation: "Narrative Text berlatar masa lampau (past events) sehingga wajib memakai Verb 2 (entered, sat, spoke).",
+                        rule: "Rumus Simple Past Tense: Subject + Verb 2 (Regular/Irregular)."
+                    },
+                    {
+                        categoryBadge: "Fairytale Characteristics",
+                        taskTitle: "Identifying Fairytale Traits",
+                        instruction: "Manakah karakteristik khas Fairytale yang muncul dalam cuplikan cerita di atas?",
+                        options: [
+                            { text: "A. Animals can talk and guide the hero.", correct: true },
+                            { text: "B. Modern space rockets are used for travel.", correct: false },
+                            { text: "C. Detailed scientific explanation of owls.", correct: false },
+                            { text: "D. Real historical figures from Europe.", correct: false }
+                        ],
+                        explanation: "Salah satu karakteristik utama Fairytale adalah 'Animals can talk' (hewan dapat berbicara).",
+                        rule: "Fairytale memuat elemen imajinatif seperti hewan bicara dan benda sihir."
+                    }
+                ]
+            },
+            {
+                chapterId: 4,
+                title: "Chapter 4: The Final Battle",
+                structure: "Resolution",
+                icon: "fa-dragon",
+                sceneTitle: "The Sorcerer's Cave",
+                storyText: "In the cavern, Sir Valen faced the Dark Sorcerer. Instead of using violence, Sir Valen showed compassion and broke the ancient curse. The sorcerer transformed back into the kindly Guardian Sprite and returned the crystal!",
+                theoryTip: "RESOLUTION menjelaskan penyelesaian konflik utama cerita, berujung pada happy ending.",
+                steps: [
+                    {
+                        categoryBadge: "Resolution Analysis",
+                        taskTitle: "Identifying Resolution",
+                        instruction: "Bagaimanakah konflik utama pada cerita ini akhirnya terselesaikan (Resolution)?",
+                        options: [
+                            { text: "A. Sir Valen destroyed the whole cavern with dynamite.", correct: false },
+                            { text: "B. Sir Valen showed compassion, breaking the curse and retrieving the crystal.", correct: true },
+                            { text: "C. The dark sorcerer defeated Sir Valen.", correct: false },
+                            { text: "D. The crystal was broken into pieces.", correct: false }
+                        ],
+                        explanation: "Resolution menunjukkan bagaimana konflik diselesaikan. Sir Valen mematahkan kutukan dengan kebaikan dan mendapatkan kembali kristal.",
+                        rule: "Resolution memberikan jawaban akhir dan solusi dari Complication."
+                    }
+                ]
+            },
+            {
+                chapterId: 5,
+                title: "Chapter 5: Moral of the Story",
+                structure: "Re-orientation / Coda",
+                icon: "fa-sun",
+                sceneTitle: "The Golden Dawn",
+                storyText: "Light restored to Moonlight Kingdom. The villagers celebrated with joy. Goodness prevailed over evil, and Sir Valen realized that true strength comes from kindness and courage.",
+                theoryTip: "RE-ORIENTATION / CODA berisi penutup cerita dan moral value (pesan moral) yang bermanfaat bagi pembaca.",
+                steps: [
+                    {
+                        categoryBadge: "Moral Value Challenge",
+                        taskTitle: "Identifying the Coda / Moral Value",
+                        instruction: "Apakah pesan moral (moral lesson/coda) paling tepat dari keseluruhan cerita 'The Lost Crystal'?",
+                        options: [
+                            { text: "A. Weapons and force are the only ways to conquer foes.", correct: false },
+                            { text: "B. Goodness and compassion can overcome the darkest evil.", correct: true },
+                            { text: "C. Never trust talking animals in dark forests.", correct: false },
+                            { text: "D. Crystals are valuable items to sell for wealth.", correct: false }
+                        ],
+                        explanation: "Pesan moral fairytale mengajarkan bahwa kebaikan (goodness) dan keberanian dapat mengalahkan kejahatan (evil).",
+                        rule: "Moral Value/Coda merupakan pelajaran hidup berharga di akhir cerita."
+                    }
+                ]
+            }
+        ];
+
+        // Final Quiz Database (10 Comprehensive HOTS Questions)
+        const finalQuizData = [
+            {
+                category: "Definition & Purpose",
+                question: "What is the primary social function of a Narrative Text like a fairytale?",
+                options: [
+                    { text: "A. To entertain or amuse readers through a story and convey a moral value.", correct: true },
+                    { text: "B. To give step-by-step instructions on cooking food.", correct: false },
+                    { text: "C. To describe a person's physical appearance in detail.", correct: false },
+                    { text: "D. To present arguments about modern technology.", correct: false }
+                ]
+            },
+            {
+                category: "Generic Structure",
+                question: "Which part of the structure introduces who the characters are, where, and when the story takes place?",
+                options: [
+                    { text: "A. Complication", correct: false },
+                    { text: "B. Orientation", correct: true },
+                    { text: "C. Resolution", correct: false },
+                    { text: "D. Re-orientation", correct: false }
+                ]
+            },
+            {
+                category: "Generic Structure",
+                question: "Where in a fairytale does the main problem or conflict arise and escalate?",
+                options: [
+                    { text: "A. Orientation", correct: false },
+                    { text: "B. Complication", correct: true },
+                    { text: "C. Resolution", correct: false },
+                    { text: "D. Coda", correct: false }
+                ]
+            },
+            {
+                category: "Language Features",
+                question: "Which tense is predominantly used in writing Narrative Texts?",
+                options: [
+                    { text: "A. Simple Present Tense", correct: false },
+                    { text: "B. Simple Past Tense (Verb 2)", correct: true },
+                    { text: "C. Simple Future Tense", correct: false },
+                    { text: "D. Present Continuous Tense", correct: false }
+                ]
+            },
+            {
+                category: "Language Features",
+                question: "Identify the Action Verb in this sentence: 'The brave princess searched through the enchanted cavern.'",
+                options: [
+                    { text: "A. brave", correct: false },
+                    { text: "B. searched", correct: true },
+                    { text: "C. princess", correct: false },
+                    { text: "D. enchanted", correct: false }
+                ]
+            },
+            {
+                category: "Temporal Conjunction",
+                question: "Which phrase serves as a sequence word / temporal conjunction signaling time progression?",
+                options: [
+                    { text: "A. Once upon a time / Suddenly / Then", correct: true },
+                    { text: "B. Because of / Due to", correct: false },
+                    { text: "C. Beautiful / Radiant", correct: false },
+                    { text: "D. In order to", correct: false }
+                ]
+            },
+            {
+                category: "Fairytale Characteristics",
+                question: "Which of the following is NOT a typical characteristic of a Fairytale?",
+                options: [
+                    { text: "A. Magical creatures like fairies and dragons.", correct: false },
+                    { text: "B. Good people are rewarded and evil is punished.", correct: false },
+                    { text: "C. Realistic scientific reports with actual data.", correct: true },
+                    { text: "D. Classic openings like 'In a land far, far away'.", correct: false }
+                ]
+            },
+            {
+                category: "Grammar Challenge",
+                question: "Change the verb in parentheses to Past Simple: 'The dragon (fly) high above the castle.'",
+                options: [
+                    { text: "A. flied", correct: false },
+                    { text: "B. flew", correct: true },
+                    { text: "C. flying", correct: false },
+                    { text: "D. flies", correct: false }
+                ]
+            },
+            {
+                category: "Generic Structure",
+                question: "The part of the narrative text that resolves the main conflict is called...",
+                options: [
+                    { text: "A. Orientation", correct: false },
+                    { text: "B. Complication", correct: false },
+                    { text: "C. Resolution", correct: true },
+                    { text: "D. Identification", correct: false }
+                ]
+            },
+            {
+                category: "Moral Value",
+                question: "What is the term for the moral lesson placed at the end of a narrative text?",
+                options: [
+                    { text: "A. Coda or Re-orientation", correct: true },
+                    { text: "B. Complication", correct: false },
+                    { text: "C. Title", correct: false },
+                    { text: "D. Climax", correct: false }
+                ]
+            }
+        ];
+
+        let quizIndex = 0;
+        let quizScore = 0;
+        let quizSelectedOpt = null;
+
+        /* ================= GAME CONTROL FUNCTIONS ================= */
+        function startStoryGame() {
+            playSound('click');
+            score = 0;
+            hearts = 3;
+            currentChapterIndex = 0;
+            currentStepIndex = 0;
+
+            document.getElementById('welcomeView').classList.add('hidden');
+            document.getElementById('resultView').classList.add('hidden');
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('feedbackView').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('storyView').classList.remove('hidden');
+
+            updateStatsDisplay();
+            loadChapterStep();
+        }
+
+        function updateStatsDisplay() {
+            document.getElementById('scoreDisplay').innerText = `${score} PTS`;
+            document.getElementById('heartsDisplay').innerText = hearts;
+
+            // Global Progress calculation
+            const totalSteps = chapterData.reduce((acc, ch) => acc + ch.steps.length, 0);
+            let stepsCompleted = 0;
+            for (let i = 0; i < currentChapterIndex; i++) {
+                stepsCompleted += chapterData[i].steps.length;
+            }
+            stepsCompleted += currentStepIndex;
+
+            const progressPct = Math.round((stepsCompleted / totalSteps) * 100);
+            document.getElementById('progressBar').style.width = `${progressPct}%`;
+        }
+
+        function loadChapterStep() {
+            currentSelectedOption = null;
+            const chapter = chapterData[currentChapterIndex];
+            const step = chapter.steps[currentStepIndex];
+
+            // Header info
+            document.getElementById('chapterBadge').innerText = chapter.title;
+            document.getElementById('structureTag').innerText = `Structure: ${chapter.structure}`;
+            document.getElementById('chapterStepText').innerText = `Step ${currentStepIndex + 1} of ${chapter.steps.length}`;
+
+            // Parchment left box
+            document.getElementById('storySceneTitle').innerText = chapter.sceneTitle;
+            document.getElementById('sceneIcon').className = `fa-solid ${chapter.icon} text-amber-400 animate-float`;
+            document.getElementById('storyParagraph').innerText = chapter.storyText;
+            document.getElementById('theoryTipText').innerText = chapter.theoryTip;
+
+            // Task right box
+            document.getElementById('taskTitle').innerText = step.taskTitle;
+            document.getElementById('taskCategoryBadge').innerText = step.categoryBadge;
+            document.getElementById('taskInstruction').innerText = step.instruction;
+
+            // Render Options
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            step.options.forEach((opt, idx) => {
+                const optBtn = document.createElement('button');
+                optBtn.type = 'button';
+                optBtn.className = 'w-full text-left p-3.5 rounded-2xl border border-purple-700/60 bg-purple-950/60 hover:bg-purple-900/80 hover:border-amber-400 font-semibold text-xs sm:text-sm text-purple-100 flex items-center justify-between transition shadow-sm';
+                optBtn.onclick = () => selectChapterOption(idx, optBtn);
+
+                optBtn.innerHTML = `
+                    <span class="pr-2">${opt.text}</span>
+                    <i class="fa-regular fa-circle text-purple-400 opt-check-icon shrink-0"></i>
+                `;
+                container.appendChild(optBtn);
+            });
+
+            // Reset submit button
+            const subBtn = document.getElementById('submitAnswerBtn');
+            subBtn.disabled = true;
+            subBtn.className = 'w-full sm:w-auto px-6 py-3 bg-purple-900/50 text-purple-400 font-bold text-sm rounded-xl transition cursor-not-allowed flex items-center justify-center space-x-2';
+        }
+
+        function selectChapterOption(idx, btnEl) {
+            playSound('click');
+            currentSelectedOption = idx;
+
+            // Reset option visual states
+            const allBtns = document.querySelectorAll('#optionsContainer button');
+            allBtns.forEach(b => {
+                b.className = 'w-full text-left p-3.5 rounded-2xl border border-purple-700/60 bg-purple-950/60 hover:bg-purple-900/80 hover:border-amber-400 font-semibold text-xs sm:text-sm text-purple-100 flex items-center justify-between transition shadow-sm';
+                const check = b.querySelector('.opt-check-icon');
+                check.className = 'fa-regular fa-circle text-purple-400 opt-check-icon shrink-0';
+            });
+
+            // Highlight chosen option
+            btnEl.className = 'w-full text-left p-3.5 rounded-2xl border-2 border-amber-400 bg-purple-900/90 font-bold text-xs sm:text-sm text-amber-200 flex items-center justify-between transition shadow-md';
+            const selCheck = btnEl.querySelector('.opt-check-icon');
+            selCheck.className = 'fa-solid fa-circle-check text-amber-400 opt-check-icon shrink-0';
+
+            // Enable submit button
+            const subBtn = document.getElementById('submitAnswerBtn');
+            subBtn.disabled = false;
+            subBtn.className = 'btn-gold w-full sm:w-auto px-6 py-3 text-sm rounded-xl flex items-center justify-center space-x-2 shadow-lg';
+        }
+
+        function submitChapterAnswer() {
+            if (currentSelectedOption === null) return;
+
+            const step = chapterData[currentChapterIndex].steps[currentStepIndex];
+            const chosen = step.options[currentSelectedOption];
+
+            if (chosen.correct) {
+                playSound('correct');
+                score += 10;
+                showFeedbackModal(true, step);
+            } else {
+                playSound('wrong');
+                hearts = Math.max(0, hearts - 1);
+                score = Math.max(0, score - 5);
+                updateStatsDisplay();
+
+                if (hearts === 0) {
+                    alert("Aura kehidupanmu habis! Kerajaan mengisi ulang daya magismu (Hearts Refilled).");
+                    hearts = 3;
+                    updateStatsDisplay();
+                }
+                showFeedbackModal(false, step);
+            }
+        }
+
+        function showFeedbackModal(isCorrect, step) {
+            document.getElementById('storyView').classList.add('hidden');
+            const feedbackView = document.getElementById('feedbackView');
+            feedbackView.classList.remove('hidden');
+
+            const headerBox = document.getElementById('feedbackHeaderBox');
+            const iconCircle = document.getElementById('feedbackIconCircle');
+            const icon = document.getElementById('feedbackIcon');
+            const title = document.getElementById('feedbackTitle');
+            const subtitle = document.getElementById('feedbackSubtitle');
+
+            if (isCorrect) {
+                headerBox.className = 'p-4 rounded-2xl mb-4 flex items-center space-x-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-200';
+                iconCircle.className = 'w-12 h-12 rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg bg-emerald-600';
+                icon.className = 'fa-solid fa-check';
+                title.innerText = 'Jawaban Tepat, Petualang! 🎉';
+                subtitle.innerText = '+10 Poin Didapatkan!';
+            } else {
+                headerBox.className = 'p-4 rounded-2xl mb-4 flex items-center space-x-4 bg-rose-500/20 border border-rose-500/40 text-rose-200';
+                iconCircle.className = 'w-12 h-12 rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg bg-rose-600';
+                icon.className = 'fa-solid fa-xmark';
+                title.innerText = 'Opsi Belum Tepat! ❌';
+                subtitle.innerText = '-5 Poin • Mari pelajari pembahasannya.';
+            }
+
+            document.getElementById('feedbackExplanationText').innerText = step.explanation;
+            document.getElementById('feedbackRuleText').innerText = step.rule;
+            updateStatsDisplay();
+        }
+
+        function continueAfterFeedback() {
+            playSound('click');
+            document.getElementById('feedbackView').classList.add('hidden');
+
+            const chapter = chapterData[currentChapterIndex];
+            currentStepIndex++;
+
+            if (currentStepIndex < chapter.steps.length) {
+                document.getElementById('storyView').classList.remove('hidden');
+                loadChapterStep();
+            } else {
+                // Chapter finished reward!
+                score += 20;
+                checkBadgesUnlock();
+                currentChapterIndex++;
+                currentStepIndex = 0;
+
+                if (currentChapterIndex < chapterData.length) {
+                    document.getElementById('storyView').classList.remove('hidden');
+                    loadChapterStep();
+                } else {
+                    // All chapters completed -> start final quiz!
+                    startFinalQuiz();
+                }
+            }
+        }
+
+        function checkBadgesUnlock() {
+            if (currentChapterIndex === 0 && !unlockedBadges.badge1) {
+                unlockedBadges.badge1 = true;
+                unlockBadgeCard('badge1Card');
+            } else if (currentChapterIndex === 2 && !unlockedBadges.badge2) {
+                unlockedBadges.badge2 = true;
+                unlockBadgeCard('badge2Card');
+            } else if (currentChapterIndex === 3 && !unlockedBadges.badge3) {
+                unlockedBadges.badge3 = true;
+                unlockBadgeCard('badge3Card');
+            }
+        }
+
+        function unlockBadgeCard(id) {
+            playSound('badge');
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('badge-locked');
+                el.classList.add('border-amber-400', 'bg-amber-500/10');
+            }
+            document.getElementById('badgeNotificationDot').classList.remove('hidden');
+        }
+
+        /* ================= FINAL QUIZ ENGINE ================= */
+        function startFinalQuiz() {
+            quizIndex = 0;
+            quizScore = 0;
+            document.getElementById('storyView').classList.add('hidden');
+            document.getElementById('quizView').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        function loadQuizQuestion() {
+            quizSelectedOpt = null;
+            const q = finalQuizData[quizIndex];
+
+            document.getElementById('quizNumberText').innerText = `${quizIndex + 1} / ${finalQuizData.length}`;
+            document.getElementById('quizCategoryTag').innerText = q.category;
+            document.getElementById('quizQuestionText').innerText = q.question;
+
+            const container = document.getElementById('quizOptionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const optBtn = document.createElement('button');
+                optBtn.type = 'button';
+                optBtn.className = 'w-full text-left p-3.5 rounded-2xl border border-purple-700/60 bg-purple-950/60 hover:bg-purple-900/80 hover:border-amber-400 font-semibold text-xs sm:text-sm text-purple-100 flex items-center justify-between transition shadow-sm';
+                optBtn.onclick = () => selectQuizOption(idx, optBtn);
+
+                optBtn.innerHTML = `
+                    <span class="pr-2">${opt.text}</span>
+                    <i class="fa-regular fa-circle text-purple-400 opt-quiz-check shrink-0"></i>
+                `;
+                container.appendChild(optBtn);
+            });
+
+            const subBtn = document.getElementById('quizSubmitBtn');
+            subBtn.disabled = true;
+            subBtn.className = 'w-full sm:w-auto px-8 py-3.5 bg-purple-900/50 text-purple-400 font-extrabold text-sm rounded-xl transition cursor-not-allowed flex items-center justify-center space-x-2';
+        }
+
+        function selectQuizOption(idx, btnEl) {
+            playSound('click');
+            quizSelectedOpt = idx;
+
+            const allBtns = document.querySelectorAll('#quizOptionsContainer button');
+            allBtns.forEach(b => {
+                b.className = 'w-full text-left p-3.5 rounded-2xl border border-purple-700/60 bg-purple-950/60 hover:bg-purple-900/80 hover:border-amber-400 font-semibold text-xs sm:text-sm text-purple-100 flex items-center justify-between transition shadow-sm';
+                b.querySelector('.opt-quiz-check').className = 'fa-regular fa-circle text-purple-400 opt-quiz-check shrink-0';
+            });
+
+            btnEl.className = 'w-full text-left p-3.5 rounded-2xl border-2 border-amber-400 bg-purple-900/90 font-bold text-xs sm:text-sm text-amber-200 flex items-center justify-between transition shadow-md';
+            btnEl.querySelector('.opt-quiz-check').className = 'fa-solid fa-circle-check text-amber-400 opt-quiz-check shrink-0';
+
+            const subBtn = document.getElementById('quizSubmitBtn');
+            subBtn.disabled = false;
+            subBtn.className = 'btn-gold w-full sm:w-auto px-8 py-3.5 text-sm rounded-xl flex items-center justify-center space-x-2 shadow-lg';
+        }
+
+        function submitQuizAnswer() {
+            if (quizSelectedOpt === null) return;
+
+            const q = finalQuizData[quizIndex];
+            if (q.options[quizSelectedOpt].correct) {
+                playSound('correct');
+                quizScore += 10;
+                score += 10;
+            } else {
+                playSound('wrong');
+            }
+
+            quizIndex++;
+            updateStatsDisplay();
+
+            if (quizIndex < finalQuizData.length) {
+                loadQuizQuestion();
+            } else {
+                finishGame();
+            }
+        }
+
+        function finishGame() {
+            unlockedBadges.badge4 = true;
+            unlockBadgeCard('badge4Card');
+
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('resultView').classList.remove('hidden');
+
+            const totalPossibleQuizScore = finalQuizData.length * 10;
+            const accuracyPct = Math.round((quizScore / totalPossibleQuizScore) * 100);
+
+            document.getElementById('finalScoreText').innerText = score;
+            document.getElementById('finalAccuracyText').innerText = `${accuracyPct}%`;
+
+            let masterRank = "Fairytale Apprentice";
+            if (accuracyPct >= 90) masterRank = "Fairytale Grandmaster";
+            else if (accuracyPct >= 70) masterRank = "Senior Storyteller";
+            else masterRank = "Kingdom Scholar";
+
+            document.getElementById('finalBadgeTitle').innerText = masterRank;
+
+            // Set Certificate Date
+            const now = new Date();
+            document.getElementById('certificateDate').innerText = now.toLocaleDateString('id-ID', { month: 'short', year: 'numeric' });
+        }
+
+        /* ================= UTILITY & MODAL CONTROLS ================= */
+        function openCodexModal() {
+            playSound('click');
+            document.getElementById('codexModal').classList.remove('hidden');
+        }
+
+        function closeCodexModal() {
+            playSound('click');
+            document.getElementById('codexModal').classList.add('hidden');
+        }
+
+        function toggleBadgesModal() {
+            playSound('click');
+            document.getElementById('badgeNotificationDot').classList.add('hidden');
+            const modal = document.getElementById('badgesModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function updateCertificateName() {
+            const inputVal = document.getElementById('playerNameInput').value.trim();
+            document.getElementById('certPlayerName').innerText = inputVal !== '' ? inputVal : 'Petualang Moonlight';
+        }
+
+        function printCertificate() {
+            window.print();
+        }
+
+        function restartGame() {
+            startStoryGame();
+        }
+    </script>
+</body>
+</html>
+```
